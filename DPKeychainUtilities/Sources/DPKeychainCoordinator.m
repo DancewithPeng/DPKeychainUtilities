@@ -363,7 +363,13 @@ NSString * const DPKeychainCoordinatorErrorDomain = @"com.dp.DPKeychainUtilities
            forKey:(NSString *)key
           service:(nullable NSString *)service
             error:(NSError **)error {
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:object requiringSecureCoding:NO error:error];
+    NSData *data;
+    if (@available(iOS 11.0, *)) {
+        data = [NSKeyedArchiver archivedDataWithRootObject:object requiringSecureCoding:NO error:error];
+    } else {
+        data = [NSKeyedArchiver archivedDataWithRootObject:object];
+    }
+    
     if (*error) {
         return;
     }
@@ -381,7 +387,13 @@ NSString * const DPKeychainCoordinatorErrorDomain = @"com.dp.DPKeychainUtilities
         return nil;
     }
     
-    id result = [NSKeyedUnarchiver unarchivedObjectOfClass:cls fromData:data error:error];
+    id result;
+    if (@available(iOS 11.0, *)) {
+        result = [NSKeyedUnarchiver unarchivedObjectOfClass:cls fromData:data error:error];
+    } else {
+        result = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    }
+    
     if (*error) {
         return nil;
     }

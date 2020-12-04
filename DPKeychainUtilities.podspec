@@ -61,7 +61,7 @@ Pod::Spec.new do |spec|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  spec.platform     = :ios
+  spec.platform     = :ios, "10.0"
   # spec.platform     = :ios, "5.0"
 
   #  When using multiple platforms
@@ -88,7 +88,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Sources", "Sources/**/*.{h,m}", "DPKeychainUtilities.h"
+  spec.source_files  = "DPKeychainUtilities/Sources", "DPKeychainUtilities/Sources/**/*.{h,m}", "DPKeychainUtilities/DPKeychainUtilities.h"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -103,7 +103,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.resource  = "icon.png"
-  spec.resources = "Resources/**/*.{strings}"
+  spec.resources = "DPKeychainUtilities/Resources/**/*.{strings}"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 

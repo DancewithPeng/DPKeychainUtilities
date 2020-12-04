@@ -82,7 +82,7 @@
 }
 
 - (IBAction)updateValueButtonDidTap:(id)sender {
-    NSString *str = @"how are you";
+//    NSString *str = @"how are you";
     NSError *error = nil;
 //    [DPKeychainCoordinator.defaultCoordinator saveData:[str dataUsingEncoding:NSUTF8StringEncoding] forKey:@"demo" service:@"user.demo" error:&error];
     [DPKeychainCoordinator.defaultCoordinator saveNumber:@(19.65) forKey:@"demo" service:nil error:&error];
