@@ -1,0 +1,12 @@
+/* 
+  Localized.strings
+  DPKeychainUtilities
+
+  Created by 张鹏 on 2020/12/3.
+  
+*/
+
+unknownErrorMessage          = "未知错误，详情请参看OSStatus错误列表";
+duplicateItemErrorMessage    = "密码已经存在";
+permissionDeniedErrorMessage = "没有访问权限";
+itemNotExistsErrorMessage    = "数据项不存在";
