@@ -9,7 +9,7 @@
 ### Cocoapods
 
 ```ruby
-pod 'DPKeychainUtilities', '~> 1.0'
+pod 'DPKeychainUtilities', '~> 1.0.0'
 ```
 
 ## 使用
